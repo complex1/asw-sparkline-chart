@@ -1,28 +1,60 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <main id="app">
+    <navbar/>
+    <div class="flex">
+      <sidebar/>
+      <div class="cont">
+        <component class="doc-section" :is="compName" />
+      </div>
+    </div>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    navbar: () => import('./components/navbar'),
+    sidebar: () => import('./components/sidebar'),
+    HomeDoc: () => import('./components/home'),
+    BarDoc: () => import('./components/bar'),
+    LineDoc: () => import('./components/line'),
+    PieDoc: () => import('./components/pie')
+  },
+  data () {
+    return {
+      data: [],
+      path: null
+    }
+  },
+  computed: {
+    compName () {
+      switch (this.path) {
+        case '/': return 'home-doc'
+        case '/line': return 'line-doc'
+        case '/bar': return 'bar-doc'
+        case '/pie': return 'pie-doc'
+        default: return 'home-doc'
+      }
+    }
+  },
+  mounted () {
+    this.path = window.location.pathname
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.cont {
+  width: calc(100vw - 150px);
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+.doc-section {
+  max-width: 800px;
+  margin: 0px auto;
+  padding: 20px;
+  padding-bottom: 40px;
 }
 </style>

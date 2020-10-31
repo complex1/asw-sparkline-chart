@@ -1,0 +1,29 @@
+html, body {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Montserrat', sans-serif;
+  color: #1d3557;
+  // background-color: #caf0f8;
+}
+h1, h2, h3, h4, h5, h6, p, div, ul, ol, li {
+  margin: 0px;
+  padding: 0px;
+  color: #1d3557;
+}
+* {
+  box-sizing: border-box;
+}
+*:focus {
+  outline: none;
+}
+
+.tc {
+  text-align: center;
+}
+.flex {
+  display: flex;
+}
+.ma {
+  width: fit-content;
+  margin: 0px auto;
+}
