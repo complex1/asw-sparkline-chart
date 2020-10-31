@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h4 class="tc">Charts</h4>
     <ul>
       <li>
         <a to="/" @click="$emit('goto', '/')">Home</a>
@@ -9,7 +8,7 @@
         <a to="/setup" @click="$emit('goto', '/setup')">Setup</a>
       </li>
       <li>
-        <a to="/data" @click="$emit('goto', 'data')">Data</a>
+        <a to="/data" @click="$emit('goto', '/data')">Data</a>
       </li>
       <li>
         <a to="/bar" @click="$emit('goto', '/bar')">Bar</a>

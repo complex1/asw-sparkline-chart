@@ -18,6 +18,8 @@ export default {
     navbar: () => import('./components/navbar'),
     sidebar: () => import('./components/sidebar'),
     HomeDoc: () => import('./components/home'),
+    SetupDoc: () => import('./components/setup'),
+    DataDoc: () => import('./components/data'),
     BarDoc: () => import('./components/bar'),
     LineDoc: () => import('./components/line'),
     PieDoc: () => import('./components/pie')
@@ -37,6 +39,8 @@ export default {
     compName () {
       switch (this.path) {
         case '/': return 'home-doc'
+        case '/setup': return 'setup-doc'
+        case '/data': return 'data-doc'
         case '/line': return 'line-doc'
         case '/bar': return 'bar-doc'
         case '/pie': return 'pie-doc'

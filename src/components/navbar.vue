@@ -1,7 +1,7 @@
 <template>
   <nav>
     <h3>ASW Sparkline</h3>
-    <a href="#">
+    <a href="https://github.com/complex1/asw-sparkline-chart">
       <img src="../assets/github.svg" height="100%" alt="">
     </a>
   </nav>
