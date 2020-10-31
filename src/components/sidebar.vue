@@ -47,6 +47,7 @@ section {
       display: block;
       font-weight: bold;
       color: #555555;
+      cursor: pointer;
     }
   }
   li:hover {
