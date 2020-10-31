@@ -1,10 +1,11 @@
 <template>
-  <a :href="to" @click="goTo">
+  <a :href="to" onclick="return false" @click="goTo">
     <slot></slot>
   </a>
 </template>
 
 <script>
+
 export default {
   props: {
     to: {
@@ -18,7 +19,7 @@ export default {
   },
   methods: {
     goTo (e) {
-      // window.history.replaceState({}, this.name || this.to, this.to)
+      this.$emit('goTo', this.to)
     }
   }
 }

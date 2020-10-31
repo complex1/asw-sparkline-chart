@@ -3,22 +3,22 @@
     <h4 class="tc">Charts</h4>
     <ul>
       <li>
-        <router-link to="/">Home</router-link>
+        <a to="/" @click="$emit('goto', '/')">Home</a>
       </li>
       <li>
-        <router-link to="/setup">Setup</router-link>
+        <a to="/setup" @click="$emit('goto', '/setup')">Setup</a>
       </li>
       <li>
-        <router-link to="/data">Data</router-link>
+        <a to="/data" @click="$emit('goto', 'data')">Data</a>
       </li>
       <li>
-        <router-link to="/bar">Bar</router-link>
+        <a to="/bar" @click="$emit('goto', '/bar')">Bar</a>
       </li>
       <li>
-        <router-link to="/line">Line</router-link>
+        <a to="/line" @click="$emit('goto', '/line')">Line</a>
       </li>
       <li>
-        <router-link to="/pie">Pie</router-link>
+        <a to="/pie" @click="$emit('goto', '/pie')">Pie</a>
       </li>
     </ul>
   </section>

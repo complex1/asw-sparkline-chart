@@ -2,7 +2,7 @@
   <main id="app">
     <navbar/>
     <div class="flex">
-      <sidebar/>
+      <sidebar @goto="goTo"/>
       <div class="cont">
         <component class="doc-section" :is="compName" />
       </div>
@@ -28,6 +28,11 @@ export default {
       path: null
     }
   },
+  methods: {
+    goTo (path) {
+      this.path = path
+    }
+  },
   computed: {
     compName () {
       switch (this.path) {
@@ -38,9 +43,6 @@ export default {
         default: return 'home-doc'
       }
     }
-  },
-  mounted () {
-    this.path = window.location.pathname
   }
 }
 </script>
